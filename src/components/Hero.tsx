@@ -45,15 +45,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-sora font-extrabold text-[#f2f2f2] text-left tracking-[-0.04em] leading-[0.92] text-[46px] sm:text-[64px] lg:text-[76px] xl:text-[84px] mb-6"
+            className="font-sora font-extrabold text-[#f2f2f2] text-left tracking-[-0.04em] leading-[0.96] text-[40px] sm:text-[56px] lg:text-[68px] xl:text-[76px] mb-6"
             style={{
               letterSpacing: '-0.04em',
-              lineHeight: 0.94,
+              lineHeight: 1.02,
             }}
           >
-            Building apps
+            Building the future,
             <br />
-            <span className="text-white">people actually use.</span>
+            <span className="text-white">one line of code at a time.</span>
             <span className="text-primary cursor-blink inline-block ml-1">|</span>
           </motion.h1>
 
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-sora font-light text-[#6b6b6b] text-[15px] sm:text-[16px] leading-relaxed max-w-[420px] mb-8"
+            className="font-sora font-light text-[#6b6b6b] text-[15px] sm:text-[16px] leading-relaxed max-w-[480px] mb-8"
           >
             {PERSONAL_INFO.bio}
           </motion.p>

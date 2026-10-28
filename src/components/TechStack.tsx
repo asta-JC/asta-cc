@@ -2,52 +2,34 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
   Code2,
+  Sparkles,
+  Smartphone,
   Globe,
   FileCode2,
   Palette,
-  Sparkles,
   Database,
-  Server,
-  Cpu,
-  Layers,
-  Binary,
   Cloud,
-  Terminal,
-  ShieldCheck,
   Zap,
+  Server,
+  GitBranch,
+  Terminal,
 } from 'lucide-react';
 import { TECH_STACK } from '../data/portfolio';
 
 // Icon mapper for tech items
 const getTechIcon = (name: string) => {
-  switch (name) {
-    case 'React':
-      return <Code2 className="w-4 h-4 text-primary" />;
-    case 'Next.js':
-      return <Globe className="w-4 h-4 text-primary" />;
-    case 'TypeScript':
-      return <FileCode2 className="w-4 h-4 text-primary" />;
-    case 'Tailwind CSS':
-      return <Palette className="w-4 h-4 text-primary" />;
-    case 'Framer Motion':
-      return <Sparkles className="w-4 h-4 text-primary" />;
-    case 'TanStack Query':
-      return <Zap className="w-4 h-4 text-primary" />;
-    case 'Node.js':
-      return <Server className="w-4 h-4 text-primary" />;
-    case 'Express / Nest':
-      return <Cpu className="w-4 h-4 text-primary" />;
-    case 'PostgreSQL':
-      return <Database className="w-4 h-4 text-primary" />;
-    case 'Redis':
-      return <Layers className="w-4 h-4 text-primary" />;
-    case 'Prisma ORM':
-      return <Binary className="w-4 h-4 text-primary" />;
-    case 'AWS & Docker':
-      return <Cloud className="w-4 h-4 text-primary" />;
-    default:
-      return <Terminal className="w-4 h-4 text-primary" />;
-  }
+  if (name.includes('Kotlin')) return <Code2 className="w-4 h-4 text-primary" />;
+  if (name.includes('Compose')) return <Sparkles className="w-4 h-4 text-primary" />;
+  if (name.includes('Android')) return <Smartphone className="w-4 h-4 text-primary" />;
+  if (name.includes('Next') || name.includes('React')) return <Globe className="w-4 h-4 text-primary" />;
+  if (name.includes('TypeScript')) return <FileCode2 className="w-4 h-4 text-primary" />;
+  if (name.includes('Material')) return <Palette className="w-4 h-4 text-primary" />;
+  if (name.includes('Database') || name.includes('Room') || name.includes('Supabase')) return <Database className="w-4 h-4 text-primary" />;
+  if (name.includes('Cloudflare') || name.includes('Vercel')) return <Cloud className="w-4 h-4 text-primary" />;
+  if (name.includes('Coroutines') || name.includes('Flow')) return <Zap className="w-4 h-4 text-primary" />;
+  if (name.includes('REST') || name.includes('Node') || name.includes('APIs')) return <Server className="w-4 h-4 text-primary" />;
+  if (name.includes('Git')) return <GitBranch className="w-4 h-4 text-primary" />;
+  return <Terminal className="w-4 h-4 text-primary" />;
 };
 
 export const TechStack: React.FC = () => {
@@ -64,21 +46,21 @@ export const TechStack: React.FC = () => {
             The stack<span className="text-primary">.</span>
           </h2>
           <p className="font-sora font-light text-muted text-sm sm:text-base max-w-md mt-3">
-            Core technologies and runtime environments I use to construct fast, production-grade architectures.
+            Core technologies, libraries, and runtime platforms I use to build robust Android applications and full-stack web products.
           </p>
         </div>
 
         {/* Stack Groups */}
         <div className="space-y-10">
-          {/* Row 1: Frontend */}
+          {/* Row 1: Mobile & Frontend */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="font-mono text-[9px] uppercase tracking-wider text-muted font-semibold">
-                // LAYER 01: FRONTEND
+                // LAYER 01: MOBILE & FRONTEND
               </span>
               <div className="h-[1px] flex-1 bg-border/60" />
               <span className="font-mono text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">
-                CLIENT-SIDE & SSR
+                ANDROID & WEB
               </span>
             </div>
 
@@ -96,9 +78,11 @@ export const TechStack: React.FC = () => {
                     <div className="p-1.5 rounded bg-[#101010] border border-[#2b2b2b] group-hover:border-primary/50 transition-colors">
                       {getTechIcon(tech.name)}
                     </div>
-                    <span className="font-mono text-[9px] text-muted group-hover:text-primary transition-colors">
-                      {tech.level}
-                    </span>
+                    {tech.level && (
+                      <span className="font-mono text-[9px] text-muted group-hover:text-primary transition-colors">
+                        {tech.level}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <span className="font-mono text-[11px] text-[#f2f2f2] group-hover:text-primary transition-colors font-medium">
@@ -110,15 +94,15 @@ export const TechStack: React.FC = () => {
             </div>
           </div>
 
-          {/* Row 2: Backend */}
+          {/* Row 2: Backend & Tooling */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="font-mono text-[9px] uppercase tracking-wider text-muted font-semibold">
-                // LAYER 02: BACKEND & INFRASTRUCTURE
+                // LAYER 02: BACKEND, STORAGE & TOOLING
               </span>
               <div className="h-[1px] flex-1 bg-border/60" />
               <span className="font-mono text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">
-                DISTRIBUTED & EDGE
+                DATABASES & CLOUD
               </span>
             </div>
 
@@ -136,9 +120,11 @@ export const TechStack: React.FC = () => {
                     <div className="p-1.5 rounded bg-[#101010] border border-[#2b2b2b] group-hover:border-primary/50 transition-colors">
                       {getTechIcon(tech.name)}
                     </div>
-                    <span className="font-mono text-[9px] text-muted group-hover:text-primary transition-colors">
-                      {tech.level}
-                    </span>
+                    {tech.level && (
+                      <span className="font-mono text-[9px] text-muted group-hover:text-primary transition-colors">
+                        {tech.level}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <span className="font-mono text-[11px] text-[#f2f2f2] group-hover:text-primary transition-colors font-medium">
@@ -147,31 +133,6 @@ export const TechStack: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Technical Standard Guarantees Strip */}
-        <div className="mt-12 pt-8 border-t border-[#262626] grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0e0e0e] border border-[#212121]">
-            <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-            <div className="font-mono text-[11px]">
-              <span className="text-foreground font-semibold block">Strict Type Safety</span>
-              <span className="text-muted text-[10px]">100% TypeScript compile-time checks</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0e0e0e] border border-[#212121]">
-            <Zap className="w-4 h-4 text-primary shrink-0" />
-            <div className="font-mono text-[11px]">
-              <span className="text-foreground font-semibold block">Zero-Jank 60FPS</span>
-              <span className="text-muted text-[10px]">Optimized React renders & CSS GPU accel</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0e0e0e] border border-[#212121]">
-            <Database className="w-4 h-4 text-primary shrink-0" />
-            <div className="font-mono text-[11px]">
-              <span className="text-foreground font-semibold block">ACID Compliant</span>
-              <span className="text-muted text-[10px]">Resilient relational schema migrations</span>
             </div>
           </div>
         </div>

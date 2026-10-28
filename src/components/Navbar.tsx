@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 {PERSONAL_INFO.name}
               </span>
               <span className="font-mono text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20 w-fit">
-                Full-Stack Dev
+                {PERSONAL_INFO.role}
               </span>
             </div>
           </a>

@@ -2,12 +2,15 @@ export interface Project {
   id: string;
   title: string;
   tag: string;
+  status: 'live-demo' | 'public-repositories' | 'in-development';
   description: string;
   metrics?: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
-  featuredType: 'dashboard' | 'ecommerce' | 'collaboration';
+  repositories?: string[];
+  plannedFeatures?: string[];
+  featuredType: 'mushirom' | 'cherryapps' | 'cherrynotes';
 }
 
 export interface TechItem {

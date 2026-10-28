@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Send, Terminal, ArrowUp } from 'lucide-react';
+import { Github, Send, Terminal, ArrowUp, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolio';
 
 export const Footer: React.FC = () => {
@@ -24,53 +24,50 @@ export const Footer: React.FC = () => {
               <span className="font-sora font-bold text-base text-[#f2f2f2]">
                 {PERSONAL_INFO.name}
               </span>
+              <span className="font-mono text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">
+                {PERSONAL_INFO.shortName}
+              </span>
             </div>
             <span className="font-mono text-[10px] text-muted">
-              {PERSONAL_INFO.role} & Software Engineer
+              {PERSONAL_INFO.role} · {PERSONAL_INFO.location}
             </span>
           </div>
 
           {/* Right: Social Icon Links */}
-          <div className="flex items-center gap-4">
-            <a
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
-            >
-              <Github className="w-4 h-4" />
-            </a>
+          <div className="flex items-center gap-3">
+            {PERSONAL_INFO.github && (
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+            )}
 
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-              className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
+            {PERSONAL_INFO.telegram && (
+              <a
+                href={PERSONAL_INFO.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram Message"
+                className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
+              >
+                <Send className="w-4 h-4" />
+              </a>
+            )}
 
-            <a
-              href={PERSONAL_INFO.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter Profile"
-              className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-
-            <a
-              href={PERSONAL_INFO.telegram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Telegram Message"
-              className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
-            >
-              <Send className="w-4 h-4" />
-            </a>
+            {PERSONAL_INFO.email && (
+              <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                aria-label="Email Me"
+                className="p-2 rounded-md bg-[#121212] border border-[#212121] text-muted hover:text-primary hover:border-primary/50 transition-all hover:scale-105"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            )}
 
             {/* Back to top */}
             <button
@@ -86,12 +83,12 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright row */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-muted">
           <div>
-            © {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
+            © {new Date().getFullYear()} {PERSONAL_INFO.name} ({PERSONAL_INFO.shortName}). All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              Built with React, TS, Tailwind & Motion
+              Android · Kotlin · Jetpack Compose · Git
             </span>
             <span>·</span>
             <span>JetBrains Mono typography</span>

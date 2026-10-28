@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, Copy, Terminal } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolio';
 
 export const TerminalCodeBlock: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const rawCode = `// building the future
-const nurmuhammad = {
-  role: "Full-Stack Dev",
-  stack: ["React", "Node", "TS"],
+const asta = {
+  name: "Ravshanov Nurmuhammad",
+  role: "Software Engineer",
+  stack: ["Kotlin", "Compose", "Android", "Git"],
   open: true
 };`;
 
@@ -45,7 +47,7 @@ const nurmuhammad = {
             <span className="w-3 h-3 rounded-full bg-[#27c93f]/80 hover:bg-[#27c93f] transition-colors" />
             <span className="ml-2 text-muted text-[11px] font-mono flex items-center gap-1.5">
               <Terminal className="w-3 h-3 text-primary/70" />
-              developer.ts
+              asta.developer.ts
             </span>
           </div>
 
@@ -86,6 +88,7 @@ const nurmuhammad = {
               <div>05</div>
               <div>06</div>
               <div>07</div>
+              <div>08</div>
             </div>
 
             {/* Code lines */}
@@ -95,21 +98,25 @@ const nurmuhammad = {
               </div>
               <div>
                 <span style={{ color: '#22d472' }}>const</span>{' '}
-                <span style={{ color: '#f2f2f2' }} className="font-medium">nurmuhammad</span>{' '}
+                <span style={{ color: '#f2f2f2' }} className="font-medium">asta</span>{' '}
                 <span style={{ color: '#f2f2f2' }}>= {'{'}</span>
               </div>
               <div className="pl-4">
+                <span style={{ color: '#f2f2f2' }}>name:</span>{' '}
+                <span style={{ color: '#22d472' }}>"{PERSONAL_INFO.name}"</span>,
+              </div>
+              <div className="pl-4">
                 <span style={{ color: '#f2f2f2' }}>role:</span>{' '}
-                <span style={{ color: '#22d472' }}>"Full-Stack Dev"</span>,
+                <span style={{ color: '#22d472' }}>"{PERSONAL_INFO.role}"</span>,
               </div>
               <div className="pl-4">
                 <span style={{ color: '#f2f2f2' }}>stack:</span>{' '}
                 <span style={{ color: '#f2f2f2' }}>[</span>
-                <span style={{ color: '#22d472' }}>"React"</span>
+                <span style={{ color: '#22d472' }}>"Kotlin"</span>
                 <span style={{ color: '#f2f2f2' }}>, </span>
-                <span style={{ color: '#22d472' }}>"Node"</span>
+                <span style={{ color: '#22d472' }}>"Compose"</span>
                 <span style={{ color: '#f2f2f2' }}>, </span>
-                <span style={{ color: '#22d472' }}>"TS"</span>
+                <span style={{ color: '#22d472' }}>"Android"</span>
                 <span style={{ color: '#f2f2f2' }}>]</span>,
               </div>
               <div className="pl-4">
@@ -121,7 +128,7 @@ const nurmuhammad = {
               </div>
               <div className="pt-2 flex items-center gap-2 text-muted text-xs">
                 <span className="text-primary font-bold">➜</span>
-                <span className="text-muted/80">ready to deploy high-scale systems</span>
+                <span className="text-muted/80">{PERSONAL_INFO.location}</span>
                 <span className="inline-block w-2 h-4 bg-primary cursor-blink ml-1" />
               </div>
             </div>
@@ -133,7 +140,7 @@ const nurmuhammad = {
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              TypeScript 5.6
+              {PERSONAL_INFO.shortName} · JVM & Android
             </span>
             <span className="hidden sm:inline text-muted/50">|</span>
             <span className="hidden sm:inline">UTF-8</span>
