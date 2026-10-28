@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Download, Printer, ExternalLink, Briefcase, GraduationCap, Code } from 'lucide-react';
+import { X, Printer, Briefcase, GraduationCap, Code } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolio';
 
 interface ResumeModalProps {
@@ -62,10 +62,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               {/* Header */}
               <div>
                 <h2 className="font-sora font-extrabold text-2xl sm:text-3xl text-foreground">
-                  {PERSONAL_INFO.name}
+                  {PERSONAL_INFO.name} <span className="text-primary text-xl font-normal">({PERSONAL_INFO.shortName})</span>
                 </h2>
                 <div className="font-mono text-primary text-sm font-semibold mt-1">
-                  {PERSONAL_INFO.role} & Software Architect
+                  {PERSONAL_INFO.role} · Android & Web
                 </div>
                 <div className="font-mono text-xs text-muted mt-2 flex flex-wrap gap-x-4 gap-y-1">
                   <span>{PERSONAL_INFO.email}</span>
@@ -73,81 +73,84 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   <span>{PERSONAL_INFO.location}</span>
                   <span>•</span>
                   <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-primary hover:underline">
-                    github.com/nurmuhammad-dev
+                    github.com/asta-JC
                   </a>
+                  <span>•</span>
+                  <span>Telegram: @GreatProgrammer</span>
                 </div>
               </div>
 
               {/* Summary */}
               <div className="p-4 rounded-lg bg-[#181818] border border-[#262626] font-sora text-xs text-muted leading-relaxed">
-                Full-stack engineer with 5+ years of experience specializing in high-concurrency Node.js architectures, React/Next.js frontend systems, and distributed database optimization. Passionate about sub-50ms latency, strict TypeScript typing, and developer tooling.
+                Aspiring software engineer passionate about building modern, practical, and user-focused digital products across Android (Kotlin, Jetpack Compose) and full-stack web platforms (Next.js, Supabase). Focused on clean architecture, maintainability, and reliable software.
               </div>
 
-              {/* Experience */}
+              {/* Projects & Work */}
               <div>
                 <div className="font-mono text-xs text-primary font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
                   <Briefcase className="w-3.5 h-3.5" />
-                  <span>Professional Experience</span>
+                  <span>Key Projects</span>
                 </div>
 
                 <div className="space-y-4">
                   <div className="border-l-2 border-primary/40 pl-4 py-1">
                     <div className="flex justify-between items-start text-xs font-sora">
-                      <span className="font-bold text-foreground">Senior Full-Stack Engineer</span>
-                      <span className="font-mono text-muted text-[11px]">2023 — Present</span>
+                      <span className="font-bold text-foreground">Mushirom — Streaming Platform</span>
+                      <span className="font-mono text-primary text-[11px]">Live Demo</span>
                     </div>
-                    <div className="font-mono text-[11px] text-primary/80">Hyperion Systems · Cloud Infrastructure</div>
+                    <div className="font-mono text-[11px] text-muted">Next.js · TypeScript · Supabase · Cloudflare R2 · Vercel</div>
                     <p className="font-sora text-xs text-muted mt-1.5 leading-relaxed">
-                      Architected real-time streaming pipelines processing 45M daily telemetry events using ClickHouse, Node.js, and React. Reduced p99 latency from 340ms to 84ms.
+                      Designed and launched a modern streaming platform for movies and series featuring multilingual dubs, user authentication, and high-speed Cloudflare R2 media distribution.
                     </p>
                   </div>
 
                   <div className="border-l-2 border-[#2b2b2b] pl-4 py-1">
                     <div className="flex justify-between items-start text-xs font-sora">
-                      <span className="font-bold text-foreground">Full-Stack Developer</span>
-                      <span className="font-mono text-muted text-[11px]">2021 — 2023</span>
+                      <span className="font-bold text-foreground">CherryApps Suite — 6 Android Apps</span>
+                      <span className="font-mono text-primary text-[11px]">Public Repositories</span>
                     </div>
-                    <div className="font-mono text-[11px] text-primary/80">ScaleStack Technologies</div>
+                    <div className="font-mono text-[11px] text-muted">Kotlin · Jetpack Compose · Material 3 · Room Database</div>
                     <p className="font-sora text-xs text-muted mt-1.5 leading-relaxed">
-                      Spearheaded the rebuild of the flagship multi-tenant e-commerce platform using Next.js 14, TypeScript, and Redis caching. Achieved sub-50ms median TTFB globally.
+                      Authored six native Android applications (Cherry-Calculator, MusicPlayer, Timer, Weather, Messages, Office) demonstrating modern declarative UI and Clean Architecture.
                     </p>
                   </div>
 
                   <div className="border-l-2 border-[#2b2b2b] pl-4 py-1">
                     <div className="flex justify-between items-start text-xs font-sora">
-                      <span className="font-bold text-foreground">Software Engineer</span>
-                      <span className="font-mono text-muted text-[11px]">2019 — 2021</span>
+                      <span className="font-bold text-foreground">CherryNotes — Productivity App</span>
+                      <span className="font-mono text-[#ffbd2e] text-[11px]">In Development</span>
                     </div>
-                    <div className="font-mono text-[11px] text-primary/80">Horizon Digital Agency</div>
+                    <div className="font-mono text-[11px] text-muted">Kotlin · Jetpack Compose · DataStore · Room · Supabase</div>
                     <p className="font-sora text-xs text-muted mt-1.5 leading-relaxed">
-                      Delivered 20+ responsive web applications using React, PostgreSQL, and Express with CI/CD automation and test suites.
+                      All-in-one productivity app integrating rich note-taking, task checklists, reminders, customizable themes, and cloud synchronization.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Education & Skills */}
+              {/* Core Competencies */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#262626]">
                 <div>
                   <div className="font-mono text-xs text-primary font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <GraduationCap className="w-3.5 h-3.5" />
-                    <span>Education</span>
+                    <Code className="w-3.5 h-3.5" />
+                    <span>Mobile & Languages</span>
                   </div>
-                  <div className="font-sora text-xs text-foreground font-semibold">
-                    B.S. in Computer Science & Software Engineering
+                  <div className="font-mono text-[11px] text-muted space-y-1">
+                    <div>Kotlin, Java fundamentals</div>
+                    <div>Jetpack Compose, Android SDK, Material 3</div>
+                    <div>Room DB, DataStore, Coroutines & Flow</div>
                   </div>
-                  <div className="font-mono text-[11px] text-muted">2016 — 2020</div>
                 </div>
 
                 <div>
                   <div className="font-mono text-xs text-primary font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <Code className="w-3.5 h-3.5" />
-                    <span>Core Competencies</span>
+                    <GraduationCap className="w-3.5 h-3.5" />
+                    <span>Web & Tools</span>
                   </div>
                   <div className="font-mono text-[11px] text-muted space-y-1">
-                    <div>React, Next.js, TypeScript, Tailwind</div>
-                    <div>Node.js, Express, PostgreSQL, Prisma, Redis</div>
-                    <div>Docker, AWS, WebSockets, Kafka, CI/CD</div>
+                    <div>Next.js, React, TypeScript, Tailwind CSS</div>
+                    <div>Supabase, Cloudflare R2, Node.js</div>
+                    <div>Git, GitHub, Gradle, Android Studio</div>
                   </div>
                 </div>
               </div>

@@ -128,9 +128,9 @@ export const TECH_STACK = {
 };
 
 export const GITHUB_STATS = {
-  starsEarned: 'Active',
-  reposPublic: '6+ Repos',
-  contributionsThisYear: 'Continuous',
+  starsEarned: '6+',
+  reposPublic: 'Kotlin',
+  contributionsThisYear: 'Active',
 };
 
 export const OPEN_SOURCE_REPOS: RepoItem[] = [
@@ -141,7 +141,7 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
     langColor: '#A97BFF',
     stars: 12,
     forks: 3,
-    url: 'https://github.com/asta-JC',
+    url: 'https://github.com/asta-JC/Cherry-Calculator',
   },
   {
     name: 'Cherry-MusicPlayer',
@@ -150,7 +150,7 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
     langColor: '#A97BFF',
     stars: 18,
     forks: 4,
-    url: 'https://github.com/asta-JC',
+    url: 'https://github.com/asta-JC/Cherry-MusicPlayer',
   },
   {
     name: 'Cherry-Weather',
@@ -159,7 +159,7 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
     langColor: '#A97BFF',
     stars: 15,
     forks: 2,
-    url: 'https://github.com/asta-JC',
+    url: 'https://github.com/asta-JC/Cherry-Weather',
   },
 ];
 

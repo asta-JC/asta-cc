@@ -5,9 +5,9 @@ import { GITHUB_STATS, OPEN_SOURCE_REPOS, PERSONAL_INFO } from '../data/portfoli
 
 export const OpenSource: React.FC = () => {
   const stats = [
-    { label: 'STARS EARNED', value: GITHUB_STATS.starsEarned },
-    { label: 'REPOS PUBLIC', value: GITHUB_STATS.reposPublic },
-    { label: 'CONTRIBUTIONS THIS YEAR', value: GITHUB_STATS.contributionsThisYear },
+    { label: 'PUBLIC REPOSITORIES', value: GITHUB_STATS.starsEarned },
+    { label: 'PRIMARY ECOSYSTEM', value: GITHUB_STATS.reposPublic },
+    { label: 'GIT ACTIVITY', value: GITHUB_STATS.contributionsThisYear },
   ];
 
   return (
@@ -23,7 +23,7 @@ export const OpenSource: React.FC = () => {
             Open source<span className="text-primary">.</span>
           </h2>
           <p className="font-sora font-light text-muted text-sm sm:text-base">
-            Contributing tooling, performance libraries, and accessible UI primitives to developers around the world.
+            Exploring, learning, and publishing Kotlin Android applications and modern software tools on GitHub.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export const OpenSource: React.FC = () => {
             className="inline-flex items-center gap-2 font-mono text-xs text-muted hover:text-primary transition-colors py-2 px-4 rounded-md border border-[#262626] hover:border-primary/50 bg-[#171717]"
           >
             <Github className="w-4 h-4 text-primary" />
-            <span>Explore all repositories on GitHub →</span>
+            <span>Explore all repositories on GitHub (@asta-JC) →</span>
           </a>
         </div>
       </div>
