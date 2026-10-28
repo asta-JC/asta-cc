@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 4%;            /* #0a0a0a near-black */
+  --surface: 0 0% 7%;               /* #121212 surface */
+  --surface-raised: 0 0% 10%;       /* #1a1a1a raised */
+  --border: 0 0% 13%;               /* #212121 border */
+  --foreground: 0 0% 95%;           /* #f2f2f2 off-white */
+  --muted: 0 0% 42%;                /* #6b6b6b muted */
+  --primary: 142 72% 50%;           /* #22d472 code green */
+  --primary-dark: 142 76% 38%;      /* #18a355 hover */
+  --primary-glow: 142 72% 50% / 0.12;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+/* Custom glow card hover utility */
+.card-glow {
+  transition: border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s ease;
+}
+
+.card-glow:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 32px hsl(142 72% 50% / 0.12);
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Subtle grid background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--surface-raised));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--border));
+}
