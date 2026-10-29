@@ -165,24 +165,10 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: "Nurmuhammad is passionate, diligent, and rapidly absorbs complex software concepts. His dedication to clean code architecture and modern UI standards is outstanding.",
-    name: 'Team Colleague',
-    role: 'Senior Engineer',
-    company: 'Tech Community',
-    avatar: 'TC',
-  },
-  {
-    quote: "Demonstrates great initiative, strong problem-solving skills, and a clear drive to build software that actually delivers value to end-users.",
-    name: 'Project Partner',
-    role: 'Lead Developer',
-    company: 'Software Lab',
-    avatar: 'PP',
-  },
-  {
-    quote: "Consistent commitment to learning modern mobile and backend architectures. Always eager to push boundaries and ship reliable applications.",
-    name: 'Mentor & Architect',
-    role: 'Engineering Lead',
-    company: 'Dev Circle',
-    avatar: 'MA',
+    quote: "Nurmuhammad is smart, has a great sense of humor, and knows how to make conversations enjoyable. His intelligence and personality make him a genuinely interesting person to talk to.",
+    name: 'Gulbadanbegim',
+    role: 'International Law',
+    company: 'Webster University',
+    avatar: 'G',
   },
 ];
