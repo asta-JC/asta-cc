@@ -1,4 +1,4 @@
-# Ravshanov Nurmuhammad — Full-Stack Developer Portfolio
+# Ravshanov Nurmuhammad — Software Engineer Portfolio
 
 A dark, technical, and precise personal portfolio website built with modern web technologies. Near-black foundation, code green accent, strong JetBrains Mono presence, terminal energy, monospaced labels, and syntax-highlight moments.
 
