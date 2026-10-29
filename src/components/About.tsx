@@ -33,19 +33,16 @@ export const About: React.FC = () => {
             About me<span className="text-primary">.</span>
           </h2>
 
-          {/* User's Exact Narrative Paragraphs */}
+          {/* Bio */}
           <div className="space-y-4 text-muted text-[15px] sm:text-[16px] leading-relaxed font-sora font-light">
             <p>
-              I am <span className="text-foreground font-normal">Ravshanov Nurmuhammad</span>, an aspiring software engineer passionate about building modern, practical, and user-focused digital products. My interests span full-stack web development, Android application development, and the technologies that bring ideas to life.
+              I’m <span className="text-primary font-normal">Ravshanov Nurmuhammad</span>, a <span className="text-primary font-normal">17-year-old</span> aspiring software engineer from <span className="text-primary font-normal">Andijan, Uzbekistan</span>. I build practical <span className="text-primary font-normal">Android apps</span> and <span className="text-primary font-normal">web experiences</span> that turn ideas into useful products.
             </p>
             <p>
-              I enjoy turning concepts into functional products, exploring new tools, and continuously improving my approach to software engineering. My work includes <span className="text-primary font-normal">Mushirom</span>, a web platform project, and <span className="text-primary font-normal">CherryApps</span>, a collection of Kotlin-based Android projects. I am also developing <span className="text-primary font-normal">CherryNotes</span>, a productivity application designed to bring notes, reminders, and to-do lists together in one place.
+              My projects include <span className="text-primary font-normal">Mushirom</span>, a movie and series platform, and <span className="text-primary font-normal">CherryApps</span>, a collection of Kotlin Android apps. I’m also building <span className="text-primary font-normal">CherryNotes</span> for notes, reminders, and to-do lists.
             </p>
             <p>
-              My engineering philosophy centers on clean code, thoughtful architecture, maintainability, and intuitive user experiences. I believe great software is not just about making things work — it is about making them reliable, understandable, and useful.
-            </p>
-            <p>
-              Beyond writing code, I am constantly learning, experimenting with AI-powered development tools, and exploring better ways to build and ship software. My goal is to grow into a versatile software engineer capable of transforming ambitious ideas into meaningful digital experiences.
+              I care about <span className="text-primary font-normal">clean code</span> and <span className="text-primary font-normal">intuitive design</span>. I’m always learning, exploring new tools, and finding better ways to build and ship software.
             </p>
           </div>
 
