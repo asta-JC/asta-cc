@@ -166,9 +166,9 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote: "Nurmuhammad is smart, has a great sense of humor, and knows how to make conversations enjoyable. His intelligence and personality make him a genuinely interesting person to talk to.",
-    name: 'Gulbadanbegim',
+    name: 'Jabbarova Gulbadanbegim',
     role: 'International Law',
     company: 'Webster University',
-    avatar: 'G',
+    avatar: 'JG',
   },
 ];

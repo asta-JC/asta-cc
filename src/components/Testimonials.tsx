@@ -68,7 +68,7 @@ export const Testimonials: React.FC = () => {
                   {item.name}
                 </span>
                 <span className="font-mono text-[10px] text-muted">
-                  {item.role} ● {item.company}
+                  {item.role} · {item.company}
                 </span>
               </div>
             </div>
@@ -95,7 +95,7 @@ export const Testimonials: React.FC = () => {
             <label htmlFor="review-affiliation" className="block font-mono text-xs text-muted mb-2">Role or university (optional)</label>
             <input
               id="review-affiliation" name="affiliation" maxLength={150}
-              placeholder="International Law ● Webster University"
+              placeholder="Software Engineering | Oxford University"
               className="w-full bg-[#171717] border border-[#2b2b2b] rounded-md px-3 py-2 text-sm text-[#f2f2f2] placeholder:text-muted/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             />
           </div>
