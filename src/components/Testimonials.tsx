@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Quote, Send } from 'lucide-react';
-import { PERSONAL_INFO, TESTIMONIALS } from '../data/portfolio';
+import { Send } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolio';
 
 export const Testimonials: React.FC = () => {
   const [draftOpened, setDraftOpened] = useState(false);
@@ -38,42 +37,7 @@ export const Testimonials: React.FC = () => {
         </p>
       </div>
 
-      {/* Testimonial cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {TESTIMONIALS.map((item, index) => (
-          <motion.div
-            key={item.name}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.12 }}
-            className="relative bg-[#121212] border border-[#212121] rounded-xl p-7 flex flex-col justify-between card-glow group overflow-hidden"
-          >
-            {/* Green top border 2px */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-primary group-hover:shadow-[0_0_12px_#22d472] transition-shadow duration-300" />
-
-            <div className="mb-6">
-              <Quote className="w-6 h-6 text-primary/40 mb-4 group-hover:text-primary transition-colors" />
-              <p className="font-sora font-light italic text-[#f2f2f2]/90 text-[14px] leading-relaxed">
-                "{item.quote}"
-              </p>
-            </div>
-
-            <div className="pt-4 border-t border-[#1e1e1e] flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#1c1c1c] border border-primary/40 flex items-center justify-center font-mono text-xs font-bold text-primary shrink-0">
-                {item.avatar}
-              </div>
-              <div className="flex flex-col">
-                <span className="font-sora font-semibold text-sm text-[#f2f2f2]">
-                  {item.name}
-                </span>
-                <span className="font-mono text-[10px] text-muted">
-                  {item.role} · {item.company}
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+      <div className="max-w-xl">
         <form
           onSubmit={handleReviewSubmit}
           className="bg-[#121212] border border-[#212121] rounded-xl p-7 space-y-4"

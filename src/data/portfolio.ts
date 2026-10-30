@@ -1,4 +1,4 @@
-import { Project, TechItem, RepoItem, Testimonial } from '../types';
+import { Project, TechItem, RepoItem } from '../types';
 
 export const PERSONAL_INFO = {
   name: 'Ravshanov Nurmuhammad',
@@ -160,15 +160,5 @@ export const OPEN_SOURCE_REPOS: RepoItem[] = [
     stars: 15,
     forks: 2,
     url: 'https://github.com/asta-JC/Cherry-Weather',
-  },
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    quote: "Nurmuhammad is smart, has a great sense of humor.",
-    name: 'Jabbarova Gulbadanbegim',
-    role: 'International Law',
-    company: 'Webster University',
-    avatar: 'JG',
   },
 ];
