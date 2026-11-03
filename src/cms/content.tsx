@@ -3,7 +3,7 @@ import { PERSONAL_INFO, PROJECTS } from '../data/portfolio';
 import type { Project } from '../types';
 import { seedPosts } from './seed';
 import { supabase } from './supabase';
-export type Post = { id: string; slug: string; title: string; summary: string; tags: string[]; content: string; cover_url: string; github_url?: string; published_at: string | null; status: 'draft' | 'published'; };
+export type Post = { id: string; slug: string; title: string; summary: string; tags: string[]; content: string; cover_url: string; github_url?: string; demo_url?: string; published_at: string | null; status: 'draft' | 'published'; };
 export const defaultSettings = {
   ...PERSONAL_INFO, projectsInitialized: false, brand: 'asta-cc.', keywords: 'ANDROID · WEB · OPEN SOURCE', subtitle: 'aspiring software engineer · building useful things',
   heroText: 'I build practical Android apps and web experiences with Kotlin, Jetpack Compose, and Android Development. Based in Andijan, Uzbekistan. Learning by making, with a soft spot for clean code and thoughtful design.',
@@ -17,6 +17,9 @@ export const defaultSettings = {
 };
 export type Settings = typeof defaultSettings;
 export type CmsProject = Project & { image_url?: string };
+export function demoUrl(value: string | undefined) {
+ try { const url = new URL(value?.trim() || ''); return url.protocol === 'https:' && !url.username && !url.password ? url.href : undefined; } catch { return undefined; }
+}
 export function githubUrl(value: string | undefined) {
  try { const url = new URL(value?.trim() || ''); return url.protocol === 'https:' && url.hostname === 'github.com' && !url.username && !url.password ? url.href : undefined; } catch { return undefined; }
 }
