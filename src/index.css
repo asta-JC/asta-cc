@@ -73,3 +73,14 @@ h1,h2,h3{font-weight:450;letter-spacing:-.025em}
 .note-row::before{top:-1px}
 .note-row::after{bottom:-1px;transform-origin:right}
 .note-row:hover::before,.note-row:hover::after,.note-row:focus-within::before,.note-row:focus-within::after{transform:scaleX(1);opacity:1}
+
+.timeline-project{position:relative}
+.timeline-project::before,.timeline-project::after{content:'';position:absolute;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);opacity:0;transition:transform .35s cubic-bezier(.22,.61,.36,1),opacity .25s;pointer-events:none;z-index:2}
+.timeline-project::before{top:-1px;transform-origin:left}
+.timeline-project::after{bottom:-1px;transform-origin:right}
+.timeline-project:hover::before,.timeline-project:hover::after,.timeline-project:focus-within::before,.timeline-project:focus-within::after{transform:scaleX(1);opacity:1}
+.project-row-link::after{content:'';position:absolute;inset:0;z-index:1;border-radius:4px}
+.project-row-link:focus-visible{outline:none}
+.project-row-link:focus-visible::after{outline:2px solid var(--gold);outline-offset:5px}
+.timeline-project h3 a{transition:color .25s}
+.timeline-project:hover h3 a{color:var(--gold)}
