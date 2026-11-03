@@ -17,7 +17,7 @@ create table if not exists public.projects(id text primary key,position integer 
 create table if not exists public.posts(
  id uuid primary key default gen_random_uuid(),slug text not null unique check(slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
  title text not null check(length(trim(title))>0),summary text not null default '',content text not null default '',
- tags text[] not null default '{}',cover_url text not null default '',
+ tags text[] not null default '{}',cover_url text not null default '',github_url text not null default '',
  status text not null default 'draft' check(status in ('draft','published')),
  published_at timestamptz,updated_at timestamptz not null default now(),
  check(status='draft' or published_at is not null)
