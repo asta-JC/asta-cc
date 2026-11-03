@@ -5,10 +5,10 @@ import { seedPosts } from './seed';
 import { supabase } from './supabase';
 export type Post = { id: string; slug: string; title: string; summary: string; tags: string[]; content: string; cover_url: string; github_url?: string; demo_url?: string; published_at: string | null; status: 'draft' | 'published'; };
 export const defaultSettings = {
-  ...PERSONAL_INFO, projectsInitialized: false, brand: 'asta-cc.', keywords: 'ANDROID · WEB · OPEN SOURCE', subtitle: 'aspiring software engineer · building useful things',
-  heroText: 'I build practical Android apps and web experiences with Kotlin, Jetpack Compose, and Android Development. Based in Andijan, Uzbekistan. Learning by making, with a soft spot for clean code and thoughtful design.',
+  ...PERSONAL_INFO, projectsInitialized: false, brand: 'asta-cc.', keywords: 'ANDROID · WEB · OPEN SOURCE', subtitle: 'Android & web developer · building thoughtful digital products',
+  heroText: "Ravshanov Nurmuhammad (Asta) is an Android and web developer from Uzbekistan who builds thoughtful apps and practical digital products. He is developing his skills through hands-on projects, working toward his goal of becoming a senior software engineer.",
   aboutTitle: 'Useful software.\nThoughtfully made.',
-  aboutText: "I'm Ravshanov Nurmuhammad, also known as Asta — an aspiring software engineer from Andijan, Uzbekistan.\n\nI build practical Android apps and web experiences that turn ideas into useful products. My work spans Kotlin and Jetpack Compose on Android, and React, Next.js, and TypeScript on the web.\n\nI care about clean code and intuitive design. I'm constantly learning, exploring new tools, and finding better ways to build and ship software.",
+  aboutText: "Ravshanov Nurmuhammad (Asta) is an Android and web developer from Uzbekistan who builds thoughtful apps and practical digital products. He is developing his skills through hands-on projects, working toward his goal of becoming a senior software engineer.\n\nI build practical Android apps and web experiences that turn ideas into useful products. My work spans Kotlin and Jetpack Compose on Android, and React, Next.js, and TypeScript on the web.\n\nI care about clean code and intuitive design. I'm constantly learning, exploring new tools, and finding better ways to build and ship software.",
   blogTitle: 'Blog.', blogDescription: "Projects, experiments, and the things I'm building along the way.",
   homeProjectsTitle: 'Selected projects', homeNotesTitle: 'Project notes',
   helloTitle: 'Have something in mind?', helloText: "I'm always happy to talk about software, ideas, and opportunities to build.",

@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   role: 'Software Engineer',
   tagline: 'AVAILABLE FOR HIRE · 2026',
   headline: 'Building the future, one line of code at a time.',
-  bio: "I'm an aspiring software engineer passionate about building useful apps and turning ideas into reality. I'm constantly learning, experimenting, and creating software that solves real problems.",
+  bio: "Ravshanov Nurmuhammad (Asta) is an Android and web developer from Uzbekistan who builds thoughtful apps and practical digital products. He is developing his skills through hands-on projects, working toward his goal of becoming a senior software engineer.",
   email: 'asta8nurmuhammad@gmail.com',
   github: 'https://github.com/asta-JC',
   linkedin: '', // Hidden / Not provided
