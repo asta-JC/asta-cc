@@ -66,3 +66,10 @@ h1,h2,h3{font-weight:450;letter-spacing:-.025em}
   from{clip-path:circle(var(--theme-reveal-radius) at var(--theme-reveal-x) var(--theme-reveal-y))}
   to{clip-path:circle(0px at var(--theme-reveal-x) var(--theme-reveal-y))}
 }
+
+/* Frame hovered stories with the theme accent without shifting their layout. */
+.note-row{position:relative}
+.note-row::before,.note-row::after{content:'';position:absolute;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .35s cubic-bezier(.22,.61,.36,1),opacity .25s;pointer-events:none}
+.note-row::before{top:-1px}
+.note-row::after{bottom:-1px;transform-origin:right}
+.note-row:hover::before,.note-row:hover::after,.note-row:focus-within::before,.note-row:focus-within::after{transform:scaleX(1);opacity:1}
