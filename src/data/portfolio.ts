@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   telegramHandle: '@GreatProgrammer',
   location: 'Andijan, Uzbekistan · UTC+5',
   yearsExp: 'Active Builder',
-  projectsCompleted: '6+ Kotlin Apps & Web',
+  projectsCompleted: '8 CherryApps & Web',
   openSource: 'Open Source Builder',
   workPreference: 'Remote & Hybrid',
 };
@@ -55,8 +55,8 @@ export const PROJECTS: Project[] = [
     title: 'CherryApps',
     status: 'public-repositories',
     tag: 'KOTLIN · JETPACK COMPOSE · MATERIAL 3 · ROOM',
-    description: 'A collection of six Kotlin-based Android applications focused on everyday needs, covering calculations, music, time management, weather, messaging, and office-related tasks.',
-    metrics: 'Six public Kotlin Android apps demonstrating real-world architecture concepts',
+    description: 'A family of eight Kotlin-based Android applications, built around everyday needs with thoughtful interfaces and a shared design language.',
+    metrics: 'Eight members of the CherryApps family',
     technologies: [
       'Kotlin',
       'Android SDK',
@@ -78,32 +78,13 @@ export const PROJECTS: Project[] = [
     featuredType: 'cherryapps',
   },
   {
-    id: 'cherrynotes',
-    title: 'CherryNotes',
+    id: 'mysterious-project',
+    title: 'Mysterious project',
     status: 'in-development',
-    tag: 'KOTLIN · JETPACK COMPOSE · DATASTORE · SUPABASE',
-    description: 'An upcoming Android productivity application planned to combine note-taking and task management with organized notes, search, customizable themes, reminders, to-do lists, and cloud synchronization.',
-    metrics: 'All-in-one productivity with notes, reminders, and to-do lists',
-    technologies: [
-      'Kotlin',
-      'Android',
-      'Jetpack Compose',
-      'Material 3',
-      'DataStore',
-      'Room Database',
-      'Supabase'
-    ],
-    plannedFeatures: [
-      'Create, edit, and delete notes',
-      'Folders or tags',
-      'Search and filtering',
-      'Pinned and favorite notes',
-      'Dark mode and themes',
-      'Supabase cloud sync',
-      'Reminders and to-do lists',
-      'Markdown formatting'
-    ],
-    githubUrl: 'https://github.com/asta-JC',
+    tag: 'UNDER WRAPS',
+    description: 'Something new is taking shape. The details are under wraps for now — more to come.',
+    metrics: 'More to come',
+    technologies: [],
     featuredType: 'cherrynotes',
   },
 ];
