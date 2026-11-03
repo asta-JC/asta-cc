@@ -145,7 +145,9 @@ function PortfolioApp() {
    window.addEventListener('popstate', sync);
    return () => { document.removeEventListener('click', navigate); window.removeEventListener('popstate', sync); };
  }, []);
- const path=route.split('?')[0].replace(/\/$/,'')||'/';const page=path==='/about'?'about':path.startsWith('/blog')?'blog':path==='/admin'?'admin':'home';
+ const adminHost=location.hostname==='admin.asta-cc.tech';
+ const requestedPath=route.split('?')[0].replace(/\/$/,'')||'/';
+ const path=adminHost&&requestedPath==='/'?'/admin':requestedPath;const page=path==='/about'?'about':path.startsWith('/blog')?'blog':path==='/admin'?'admin':'home';
  const [theme,setTheme]=useState(()=>{try{return localStorage.getItem('asta-theme-v1')||'dark'}catch{return 'dark'}});
  const themeAnimating = useRef(false);
  const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -186,7 +188,7 @@ function PortfolioApp() {
  useEffect(()=>{document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{localStorage.setItem('asta-theme-v1',theme)}catch{}},[theme]);
  useEffect(()=>{document.documentElement.style.setProperty('--gold',theme==='dark'?me.accentDark:me.accentLight)},[theme,me.accentDark,me.accentLight]);
  useEffect(()=>{document.title=`${page==='home'?me.name:page==='about'?'About':page==='admin'?'Admin':'Blog'} — Asta`;},[page]);
- return <><a className="skip" href="#main">Skip to content</a><header className="site-header"><nav className="nav-wrap" aria-label="Main navigation"><a className="wordmark" href="/">{me.brand}</a><div className="nav-links">{['home','blog','about'].map(p=><a key={p} href={p==='home'?'/':`/${p}/`} aria-current={page===p?'page':undefined}>{p}</a>)}<button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme==='dark'?'light':'dark'} theme`}>{theme==='dark'?<Moon size={21}/>:<Sun size={21}/>}</button></div></nav></header><main id="main" key={route} tabIndex={-1} className="container page-enter">{path==='/admin'?<Suspense fallback={<p>Loading studio…</p>}><Admin/></Suspense>:path==='/'?<Home/>:path==='/about'?<About/>:path==='/blog'?<Blog/>:path.startsWith('/blog/')?<Article slug={path.split('/')[2]}/>:<div className="reading"><h1>Page not found</h1><a href="/">Back home →</a></div>}</main><footer className="site-footer"><Socials/><p>© {new Date().getFullYear()} {me.name}<span> · {me.footerText}</span></p><a className="back-top" href="#" onClick={(event) => {
+ return <><a className="skip" href="#main">Skip to content</a><header className="site-header"><nav className="nav-wrap" aria-label="Main navigation"><a className="wordmark" href={adminHost?'https://www.asta-cc.tech/':'/'}>{me.brand}</a><div className="nav-links">{['home','blog','about'].map(p=><a key={p} href={`${adminHost?'https://www.asta-cc.tech':''}${p==='home'?'/':`/${p}/`}`} aria-current={page===p?'page':undefined}>{p}</a>)}<button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme==='dark'?'light':'dark'} theme`}>{theme==='dark'?<Moon size={21}/>:<Sun size={21}/>}</button></div></nav></header><main id="main" key={route} tabIndex={-1} className="container page-enter">{path==='/admin'?<Suspense fallback={<p>Loading studio…</p>}><Admin/></Suspense>:path==='/'?<Home/>:path==='/about'?<About/>:path==='/blog'?<Blog/>:path.startsWith('/blog/')?<Article slug={path.split('/')[2]}/>:<div className="reading"><h1>Page not found</h1><a href="/">Back home →</a></div>}</main><footer className="site-footer"><Socials/><p>© {new Date().getFullYear()} {me.name}<span> · {me.footerText}</span></p><a className="back-top" href="#" onClick={(event) => {
    event.preventDefault();
    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' as ScrollBehavior : 'smooth' });
  }}>back to top ↑</a></footer></>;
