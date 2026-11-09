@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import './cms/admin.css'
 import './components/NoteArtwork.css'
+import './components/BlogPostCard.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
